@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media;
-using OpenBullet.ViewModels;
+using ThunderBullet.ViewModels;
 using PluginFramework;
 using RuriLib;
 using RuriLib.Interfaces;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     public static class OB
     {
@@ -52,8 +52,8 @@ namespace OpenBullet
         public static OBSettingsViewModel OBSettings { get; set; }
 
         // Constant file paths
-        public static readonly string dataBaseFile = @"database/OpenBullet.db";
-        public static readonly string dataBaseBackupFile = @"database/OpenBullet-BackupCopy.db";
+        public static readonly string dataBaseFile = @"database/ThunderBullet.db";
+        public static readonly string dataBaseBackupFile = @"database/ThunderBullet-BackupCopy.db";
         public static readonly string obSettingsFile = @"settings/OBSettings.json";
         public static readonly string rlSettingsFile = @"settings/RLSettings.json";
         public static readonly string proxyManagerSettingsFile = @"settings/ProxyManagerSettings.json";

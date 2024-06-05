@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
-using OpenBullet.Views.UserControls;
+using ThunderBullet.Views.UserControls;
 
-namespace OpenBullet.Views.Main
+namespace ThunderBullet.Views.Main
 {
     /// <summary>
     /// Logica di interazione per PluginsSection.xaml

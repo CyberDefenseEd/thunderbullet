@@ -4,10 +4,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using OpenBullet.ViewModels;
+using ThunderBullet.ViewModels;
 using RuriLib.Runner;
 
-namespace OpenBullet.Views.Main
+namespace ThunderBullet.Views.Main
 {
     /// <summary>
     /// Logica di interazione per RunnerManager.xaml

@@ -1,4 +1,4 @@
-﻿namespace OpenBullet.Plugins
+﻿namespace ThunderBullet.Plugins
 {
     public interface IControl
     {

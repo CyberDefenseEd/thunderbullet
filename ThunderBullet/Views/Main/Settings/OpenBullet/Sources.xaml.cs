@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using OpenBullet.Models;
+using ThunderBullet.Models;
 
-namespace OpenBullet.Views.Main.Settings.OpenBullet
+namespace ThunderBullet.Views.Main.Settings.OpenBullet
 {
     /// <summary>
     /// Logica di interazione per Sources.xaml

@@ -6,7 +6,7 @@ using ICSharpCode.AvalonEdit.Highlighting;
 using ICSharpCode.AvalonEdit.Highlighting.Xshd;
 using RuriLib;
 
-namespace OpenBullet.Views.StackerBlocks
+namespace ThunderBullet.Views.StackerBlocks
 {
     /// <summary>
     /// Logica di interazione per PageBlockLSCode.xaml

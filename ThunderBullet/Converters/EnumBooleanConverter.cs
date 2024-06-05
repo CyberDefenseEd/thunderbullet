@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Data;
 
-namespace OpenBullet.Converters
+namespace ThunderBullet.Converters
 {
     public class EnumBooleanConverter : IValueConverter
     {

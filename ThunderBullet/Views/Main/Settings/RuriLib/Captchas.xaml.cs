@@ -6,7 +6,7 @@ using CaptchaSharp.Exceptions;
 using RuriLib;
 using RuriLib.Enums;
 
-namespace OpenBullet.Views.Main.Settings.RL
+namespace ThunderBullet.Views.Main.Settings.RL
 {
     /// <summary>
     /// Logica di interazione per Captchas.xaml

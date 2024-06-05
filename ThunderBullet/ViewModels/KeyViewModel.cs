@@ -1,9 +1,9 @@
-﻿using OpenBullet.Views.StackerBlocks;
+﻿using ThunderBullet.Views.StackerBlocks;
 using RuriLib.Functions.Conditions;
 using RuriLib.Models;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class KeyViewModel : ViewModelBase
     {

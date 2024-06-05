@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using RuriLib.Runner;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per DialogSelectBots.xaml

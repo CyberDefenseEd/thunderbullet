@@ -8,8 +8,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Windows.Data;
-using OpenBullet.Models;
-using OpenBullet.Repositories;
+using ThunderBullet.Models;
+using ThunderBullet.Repositories;
 using PluginFramework;
 using RuriLib;
 using RuriLib.Functions.Formats;
@@ -17,7 +17,7 @@ using RuriLib.Interfaces;
 using RuriLib.LS;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class ConfigManagerViewModel : ViewModelBase, IConfigManager
     {

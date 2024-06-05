@@ -1,8 +1,8 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
-using OpenBullet.Views.Main.Configs.OtherOptions;
+using ThunderBullet.Views.Main.Configs.OtherOptions;
 
-namespace OpenBullet.Views.Main.Configs
+namespace ThunderBullet.Views.Main.Configs
 {
     /// <summary>
     /// Logica di interazione per ConfigOtherOptions.xaml

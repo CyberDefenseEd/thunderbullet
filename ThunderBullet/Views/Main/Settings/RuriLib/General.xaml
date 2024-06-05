@@ -1,4 +1,4 @@
-﻿<Page x:Class="OpenBullet.Views.Main.Settings.RL.General"
+﻿<Page x:Class="ThunderBullet.Views.Main.Settings.RL.General"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
       xmlns:System="clr-namespace:System"
       xmlns:ruri="clr-namespace:RuriLib.ViewModels;assembly=RuriLib"
-      xmlns:local="clr-namespace:OpenBullet.Views.Main.Settings.RL"
+      xmlns:local="clr-namespace:ThunderBullet.Views.Main.Settings.RL"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="780"
       Title="RLSettingsGeneral">

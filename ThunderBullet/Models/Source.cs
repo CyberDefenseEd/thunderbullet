@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Models
+namespace ThunderBullet.Models
 {
     public class Source : ViewModelBase
     {

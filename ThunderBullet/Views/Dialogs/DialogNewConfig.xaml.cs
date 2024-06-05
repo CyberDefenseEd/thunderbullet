@@ -4,11 +4,11 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using OpenBullet.Repositories;
-using OpenBullet.Views.Main.Configs;
+using ThunderBullet.Repositories;
+using ThunderBullet.Views.Main.Configs;
 using RuriLib.Functions.Files;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per DialogNewConfig.xaml

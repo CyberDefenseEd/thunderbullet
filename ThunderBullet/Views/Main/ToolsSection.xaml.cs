@@ -1,8 +1,8 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
-using OpenBullet.Views.Main.Tools;
+using ThunderBullet.Views.Main.Tools;
 
-namespace OpenBullet.Views.Main
+namespace ThunderBullet.Views.Main
 {
     /// <summary>
     /// Logica di interazione per ToolsSection.xaml

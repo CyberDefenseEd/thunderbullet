@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace OpenBullet.Views.Main.Settings.OpenBullet
+namespace ThunderBullet.Views.Main.Settings.OpenBullet
 {
     /// <summary>
     /// Logica di interazione per Sounds.xaml

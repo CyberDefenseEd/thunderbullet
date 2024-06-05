@@ -5,7 +5,7 @@ using System.Windows.Media;
 using RuriLib;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class StackerBlockViewModel : ViewModelBase
     {

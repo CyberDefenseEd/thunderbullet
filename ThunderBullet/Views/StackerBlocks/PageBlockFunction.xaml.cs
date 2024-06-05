@@ -6,7 +6,7 @@ using RuriLib;
 using RuriLib.Functions.Crypto;
 using RuriLib.Functions.UserAgent;
 
-namespace OpenBullet.Views.StackerBlocks
+namespace ThunderBullet.Views.StackerBlocks
 {
     /// <summary>
     /// Logica di interazione per PageBlockFunction.xaml

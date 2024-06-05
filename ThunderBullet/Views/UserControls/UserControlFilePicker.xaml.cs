@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Win32;
-using OpenBullet.Plugins;
+using ThunderBullet.Plugins;
 
-namespace OpenBullet.Views.UserControls
+namespace ThunderBullet.Views.UserControls
 {
     /// <summary>
     /// Logica di interazione per UserControlFilePicker.xaml

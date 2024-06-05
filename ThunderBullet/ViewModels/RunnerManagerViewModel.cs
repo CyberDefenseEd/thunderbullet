@@ -4,15 +4,15 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using LiteDB;
-using OpenBullet.Repositories;
-using OpenBullet.Views.Main.Runner;
+using ThunderBullet.Repositories;
+using ThunderBullet.Views.Main.Runner;
 using RuriLib;
 using RuriLib.Interfaces;
 using RuriLib.Models;
 using RuriLib.Runner;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class RunnerManagerViewModel : ViewModelBase, IRunnerManager
     {

@@ -7,11 +7,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
-using OpenBullet.ViewModels;
+using ThunderBullet.ViewModels;
 using RuriLib;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Views.Main.Configs
+namespace ThunderBullet.Views.Main.Configs
 {
     /// <summary>
     /// Logica di interazione per ConfigManager.xaml

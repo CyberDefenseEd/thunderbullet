@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using OpenBullet.ViewModels;
+using ThunderBullet.ViewModels;
 using RuriLib;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     public class OBIOManager
     {

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
-using OpenBullet.Plugins;
+using ThunderBullet.Plugins;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Views.UserControls
+namespace ThunderBullet.Views.UserControls
 {
     /// <summary>
     /// Logica di interazione per UserControlText.xaml

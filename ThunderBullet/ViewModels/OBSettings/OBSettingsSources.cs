@@ -2,10 +2,10 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
-using OpenBullet.Models;
+using ThunderBullet.Models;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class OBSettingsSources : ViewModelBase
     {

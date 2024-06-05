@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using OpenBullet.Views.Main.Configs;
+using ThunderBullet.Views.Main.Configs;
 using RuriLib;
 using RuriLib.ViewModels;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per DialogShowLog.xaml

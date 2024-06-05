@@ -4,12 +4,12 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Input;
-using OpenBullet.ViewModels;
-using OpenBullet.Views.Main.Runner;
-using OpenBullet.Views.UserControls;
+using ThunderBullet.ViewModels;
+using ThunderBullet.Views.Main.Runner;
+using ThunderBullet.Views.UserControls;
 using RuriLib.Models;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per DialogSelectWordlist.xaml

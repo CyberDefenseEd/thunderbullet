@@ -9,7 +9,7 @@ using RuriLib;
 using RuriLib.Interfaces;
 using RuriLib.ViewModels;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     public enum Components
     {

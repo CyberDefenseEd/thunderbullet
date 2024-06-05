@@ -2,7 +2,7 @@
 using RuriLib.Models;
 using RuriLib.ViewModels;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     public class GlobalSettings : ISettings
     {

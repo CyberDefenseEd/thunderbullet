@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
-using OpenBullet.Plugins;
+using ThunderBullet.Plugins;
 
-namespace OpenBullet.Views.UserControls
+namespace ThunderBullet.Views.UserControls
 {
     /// <summary>
     /// Logica di interazione per UserControlContainer.xaml

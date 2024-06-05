@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using OpenBullet.Views.UserControls;
+using ThunderBullet.Views.UserControls;
 using PluginFramework;
 using RuriLib;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Plugins
+namespace ThunderBullet.Plugins
 {
     public static class Loader
     {

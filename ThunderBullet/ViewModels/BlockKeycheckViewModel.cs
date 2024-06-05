@@ -5,7 +5,7 @@ using RuriLib;
 using RuriLib.Models;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class BlockKeycheckViewModel : ViewModelBase
     {

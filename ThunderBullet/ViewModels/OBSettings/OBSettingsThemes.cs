@@ -2,7 +2,7 @@
 using System.Reflection;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class OBSettingsThemes : ViewModelBase
     {

@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using OpenBullet.Views.Main.Settings.RL;
+using ThunderBullet.Views.Main.Settings.RL;
 using RuriLib;
 
-namespace OpenBullet.Views.Main.Settings
+namespace ThunderBullet.Views.Main.Settings
 {
     /// <summary>
     /// Logica di interazione per RLSettingsPage.xaml

@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using LiteDB;
 
-namespace OpenBullet.Views.Main.Tools
+namespace ThunderBullet.Views.Main.Tools
 {
     /// <summary>
     /// Logica di interazione per Database.xaml

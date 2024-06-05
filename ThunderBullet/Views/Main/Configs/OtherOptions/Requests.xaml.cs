@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace OpenBullet.Views.Main.Configs.OtherOptions
+namespace ThunderBullet.Views.Main.Configs.OtherOptions
 {
     /// <summary>
     /// Logica di interazione per Requests.xaml

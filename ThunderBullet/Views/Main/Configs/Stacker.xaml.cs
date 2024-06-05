@@ -17,14 +17,14 @@ using ICSharpCode.AvalonEdit;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Highlighting;
 using ICSharpCode.AvalonEdit.Highlighting.Xshd;
-using OpenBullet.ViewModels;
-using OpenBullet.Views.Dialogs;
+using ThunderBullet.ViewModels;
+using ThunderBullet.Views.Dialogs;
 using RuriLib;
 using RuriLib.LS;
 using RuriLib.Models;
 using RuriLib.Runner;
 
-namespace OpenBullet.Views.Main.Configs
+namespace ThunderBullet.Views.Main.Configs
 {
     /// <summary>
     /// Logica di interazione per Stacker.xaml

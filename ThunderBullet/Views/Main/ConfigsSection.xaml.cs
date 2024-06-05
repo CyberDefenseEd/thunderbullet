@@ -1,9 +1,9 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
-using OpenBullet.Views.Main.Configs;
+using ThunderBullet.Views.Main.Configs;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Views.Main
+namespace ThunderBullet.Views.Main
 {
     /// <summary>
     /// Logica di interazione per Configs.xaml

@@ -5,7 +5,7 @@ using RuriLib;
 using RuriLib.Interfaces;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Repositories
+namespace ThunderBullet.Repositories
 {
     // The ID is a tuple containing the category and the filename without extension (they are enough to uniquely identify a config in the repo)
     public class ConfigRepository : IRepository<ConfigViewModel, (string, string)>

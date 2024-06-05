@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using RuriLib;
 
-namespace OpenBullet.Views.Main.Settings
+namespace ThunderBullet.Views.Main.Settings
 {
     /// <summary>
     /// Logica di interazione per OBSettings.xaml

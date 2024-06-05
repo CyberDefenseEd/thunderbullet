@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using OpenBullet.Plugins;
+using ThunderBullet.Plugins;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Views.UserControls
+namespace ThunderBullet.Views.UserControls
 {
     /// <summary>
     /// Logica di interazione per UserControlConfig.xaml

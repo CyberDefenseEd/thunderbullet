@@ -4,12 +4,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Controls;
-using OpenBullet.Plugins;
+using ThunderBullet.Plugins;
 using PluginFramework;
 using RuriLib.Interfaces;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Views.UserControls
+namespace ThunderBullet.Views.UserControls
 {
     /// <summary>
     /// Logica di interazione per PluginControl.xaml

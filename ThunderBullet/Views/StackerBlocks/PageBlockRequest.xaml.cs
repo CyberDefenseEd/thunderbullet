@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using RuriLib;
 using RuriLib.Functions.Requests;
 
-namespace OpenBullet.Views.StackerBlocks
+namespace ThunderBullet.Views.StackerBlocks
 {
     /// <summary>
     /// Logica di interazione per PageBlockRequest.xaml

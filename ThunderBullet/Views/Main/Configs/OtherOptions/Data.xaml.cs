@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using RuriLib;
 using RuriLib.Models;
 
-namespace OpenBullet.Views.Main.Configs.OtherOptions
+namespace ThunderBullet.Views.Main.Configs.OtherOptions
 {
     /// <summary>
     /// Logica di interazione per Data.xaml

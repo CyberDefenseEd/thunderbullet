@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using RuriLib;
 
-namespace OpenBullet.Views.StackerBlocks
+namespace ThunderBullet.Views.StackerBlocks
 {
     /// <summary>
     /// Logica di interazione per PageBlockTCP.xaml

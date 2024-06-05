@@ -9,7 +9,7 @@ using System.Windows.Media;
 using PluginFramework;
 using RuriLib;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     public static class BlocksExtensions
     {

@@ -15,7 +15,7 @@ using RuriLib;
 using RuriLib.Models;
 using RuriLib.Runner;
 
-namespace OpenBullet.Views.Main.Runner
+namespace ThunderBullet.Views.Main.Runner
 {
     /// <summary>
     /// Logica di interazione per Runner.xaml

@@ -3,13 +3,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
-using OpenBullet.ViewModels;
-using OpenBullet.Views.Main.Runner;
-using OpenBullet.Views.UserControls;
+using ThunderBullet.ViewModels;
+using ThunderBullet.Views.Main.Runner;
+using ThunderBullet.Views.UserControls;
 using RuriLib;
 using RuriLib.ViewModels;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per DialogSelectConfig.xaml

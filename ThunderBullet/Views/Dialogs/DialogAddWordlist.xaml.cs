@@ -4,10 +4,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Microsoft.Win32;
-using OpenBullet.Views.Main;
+using ThunderBullet.Views.Main;
 using RuriLib.Models;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per DialogAddWordlist.xaml

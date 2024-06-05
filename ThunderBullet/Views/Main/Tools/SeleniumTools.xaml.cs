@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace OpenBullet.Views.Main.Tools
+namespace ThunderBullet.Views.Main.Tools
 {
     /// <summary>
     /// Logica di interazione per SeleniumTools.xaml

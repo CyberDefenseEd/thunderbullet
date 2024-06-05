@@ -1,6 +1,6 @@
 ﻿using RuriLib.Interfaces;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     public struct ThunderBulletApp : IApplication
     {

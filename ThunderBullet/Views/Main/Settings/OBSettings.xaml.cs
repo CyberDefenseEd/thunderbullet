@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using OpenBullet.Views.Main.Settings.OpenBullet;
+using ThunderBullet.Views.Main.Settings.OpenBullet;
 
-namespace OpenBullet.Views.Main.Settings
+namespace ThunderBullet.Views.Main.Settings
 {
     /// <summary>
     /// Logica di interazione per OBSettingsPage.xaml
@@ -68,7 +68,7 @@ namespace OpenBullet.Views.Main.Settings
 
         private void resetButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to reset all your OpenBullet settings?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Are you sure you want to reset all your ThunderBullet settings?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 OB.OBSettings.Reset();
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Media.Animation;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per LoadingWindow.xaml

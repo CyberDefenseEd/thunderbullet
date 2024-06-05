@@ -5,7 +5,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using RuriLib;
 
-namespace OpenBullet.Views.StackerBlocks
+namespace ThunderBullet.Views.StackerBlocks
 {
     /// <summary>
     /// Logica di interazione per PageBlockParse.xaml

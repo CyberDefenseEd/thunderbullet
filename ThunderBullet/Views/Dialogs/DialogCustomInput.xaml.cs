@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using OpenBullet.ViewModels;
+using ThunderBullet.ViewModels;
 using RuriLib.Models;
 using RuriLib.Runner;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per DialogCustomInput.xaml

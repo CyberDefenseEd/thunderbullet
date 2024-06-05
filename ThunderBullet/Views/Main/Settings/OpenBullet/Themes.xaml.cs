@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using Microsoft.Win32;
 using Xceed.Wpf.Toolkit;
 
-namespace OpenBullet.Views.Main.Settings.OpenBullet
+namespace ThunderBullet.Views.Main.Settings.OpenBullet
 {
 
     /// <summary>

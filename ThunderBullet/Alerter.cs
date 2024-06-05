@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using RuriLib.Interfaces;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     public class Alerter : IAlerter
     {

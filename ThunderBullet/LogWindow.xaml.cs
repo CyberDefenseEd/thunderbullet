@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Input;
 using RuriLib;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per Log.xaml

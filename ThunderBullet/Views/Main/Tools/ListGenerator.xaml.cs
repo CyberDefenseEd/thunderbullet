@@ -6,10 +6,10 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Win32;
-using OpenBullet.ViewModels;
+using ThunderBullet.ViewModels;
 using RuriLib.Models;
 
-namespace OpenBullet.Views.Main.Tools
+namespace ThunderBullet.Views.Main.Tools
 {
     /// <summary>
     /// Logica di interazione per ListGenerator.xaml

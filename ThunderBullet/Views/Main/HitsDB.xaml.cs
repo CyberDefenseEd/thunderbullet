@@ -7,11 +7,11 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using Microsoft.Win32;
-using OpenBullet.ViewModels;
+using ThunderBullet.ViewModels;
 using RuriLib;
 using RuriLib.Models;
 
-namespace OpenBullet.Views.Main
+namespace ThunderBullet.Views.Main
 {
     /// <summary>
     /// Logica di interazione per HitsDB.xaml

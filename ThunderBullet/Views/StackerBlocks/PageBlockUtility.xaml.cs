@@ -4,7 +4,7 @@ using RuriLib;
 using RuriLib.Functions.Conditions;
 using RuriLib.Functions.Conversions;
 
-namespace OpenBullet.Views.StackerBlocks
+namespace ThunderBullet.Views.StackerBlocks
 {
     /// <summary>
     /// Logica di interazione per Pagexaml

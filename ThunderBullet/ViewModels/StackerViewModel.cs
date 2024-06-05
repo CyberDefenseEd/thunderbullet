@@ -4,12 +4,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Media;
 using Extreme.Net;
-using OpenBullet.Views.StackerBlocks;
+using ThunderBullet.Views.StackerBlocks;
 using RuriLib;
 using RuriLib.LS;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public enum StackerView
     {

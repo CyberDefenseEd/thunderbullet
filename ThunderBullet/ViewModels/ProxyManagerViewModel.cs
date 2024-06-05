@@ -8,13 +8,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using Extreme.Net;
 using Newtonsoft.Json.Linq;
-using OpenBullet.Repositories;
+using ThunderBullet.Repositories;
 using RuriLib.Interfaces;
 using RuriLib.Models;
 using RuriLib.Models.Stats;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class ProxyManagerViewModel : ViewModelBase, IProxyManager, IProxyChecker
     {

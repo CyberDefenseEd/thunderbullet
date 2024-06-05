@@ -2,7 +2,7 @@
 using System.Linq;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     class ListGeneratorViewModel : ViewModelBase
     {

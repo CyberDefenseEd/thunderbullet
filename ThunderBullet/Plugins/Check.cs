@@ -6,7 +6,7 @@ using PluginFramework;
 using PluginFramework.Attributes;
 using RuriLib.Interfaces;
 
-namespace OpenBullet.Plugins
+namespace ThunderBullet.Plugins
 {
     public static class Check
     {

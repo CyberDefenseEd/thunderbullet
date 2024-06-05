@@ -3,12 +3,12 @@ using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Data;
-using OpenBullet.Repositories;
+using ThunderBullet.Repositories;
 using RuriLib.Interfaces;
 using RuriLib.Models;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class HitsDBViewModel : ViewModelBase, IHitsDB
     {

@@ -2,12 +2,12 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using OpenBullet.ViewModels;
+using ThunderBullet.ViewModels;
 using RuriLib;
 using RuriLib.Functions.Conditions;
 using RuriLib.Models;
 
-namespace OpenBullet.Views.StackerBlocks
+namespace ThunderBullet.Views.StackerBlocks
 {
     /// <summary>
     /// Logica di interazione per PageBlockKeycheck.xaml

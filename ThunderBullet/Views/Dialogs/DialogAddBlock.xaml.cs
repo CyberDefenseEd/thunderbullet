@@ -3,10 +3,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using OpenBullet.Views.Main.Configs;
+using ThunderBullet.Views.Main.Configs;
 using RuriLib;
 
-namespace OpenBullet.Views.Dialogs
+namespace ThunderBullet.Views.Dialogs
 {
     /// <summary>
     /// Logica di interazione per DialogAddBlock.xaml

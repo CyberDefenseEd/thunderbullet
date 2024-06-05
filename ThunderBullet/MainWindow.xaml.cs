@@ -13,17 +13,17 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using OpenBullet.Plugins;
-using OpenBullet.ViewModels;
-using OpenBullet.Views.Main;
-using OpenBullet.Views.Main.Runner;
-using OpenBullet.Views.Main.Settings;
-using OpenBullet.Views.StackerBlocks;
+using ThunderBullet.Plugins;
+using ThunderBullet.ViewModels;
+using ThunderBullet.Views.Main;
+using ThunderBullet.Views.Main.Runner;
+using ThunderBullet.Views.Main.Settings;
+using ThunderBullet.Views.StackerBlocks;
 using RuriLib;
 using RuriLib.LS;
 using RuriLib.ViewModels;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per MainWindow.xaml
@@ -127,15 +127,15 @@ namespace OpenBullet
 
             if (!File.Exists(OB.obSettingsFile))
             {
-                MessageBox.Show("OpenBullet Settings file not found, generating a default one");
-                OB.Logger.LogWarning(Components.Main, "OpenBullet Settings file not found, generating a default one");
+                MessageBox.Show("ThunderBullet Settings file not found, generating a default one");
+                OB.Logger.LogWarning(Components.Main, "ThunderBullet Settings file not found, generating a default one");
                 OBIOManager.SaveSettings(OB.obSettingsFile, OB.OBSettings);
-                OB.Logger.LogInfo(Components.Main, $"Created the default OpenBullet Settings file {OB.obSettingsFile}");
+                OB.Logger.LogInfo(Components.Main, $"Created the default ThunderBullet Settings file {OB.obSettingsFile}");
             }
             else
             {
                 OB.OBSettings = OBIOManager.LoadSettings(OB.obSettingsFile);
-                OB.Logger.LogInfo(Components.Main, "Loaded the existing OpenBullet Settings file");
+                OB.Logger.LogInfo(Components.Main, "Loaded the existing ThunderBullet Settings file");
             }
 
             // If there is no DB backup or if it's more than 1 day old, back up the DB

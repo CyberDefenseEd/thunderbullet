@@ -10,7 +10,7 @@ using RuriLib.Models;
 using RuriLib.Runner;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Views.Main.Settings.RL
+namespace ThunderBullet.Views.Main.Settings.RL
 {
     /// <summary>
     /// Logica di interazione per Proxies.xaml

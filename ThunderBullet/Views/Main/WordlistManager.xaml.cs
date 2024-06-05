@@ -5,10 +5,10 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using OpenBullet.ViewModels;
+using ThunderBullet.ViewModels;
 using RuriLib.Models;
 
-namespace OpenBullet.Views.Main
+namespace ThunderBullet.Views.Main
 {
     /// <summary>
     /// Logica di interazione per WordlistManager.xaml

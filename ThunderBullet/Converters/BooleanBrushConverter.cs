@@ -2,7 +2,7 @@
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace OpenBullet.Converters
+namespace ThunderBullet.Converters
 {
     public class BooleanBrushConverter : IValueConverter
     {

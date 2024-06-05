@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per App.xaml

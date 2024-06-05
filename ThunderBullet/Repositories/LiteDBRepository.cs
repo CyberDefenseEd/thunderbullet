@@ -4,7 +4,7 @@ using LiteDB;
 using RuriLib.Interfaces;
 using RuriLib.Models;
 
-namespace OpenBullet.Repositories
+namespace ThunderBullet.Repositories
 {
     public class LiteDBRepository<T> : IRepository<T, Guid> where T : Persistable<Guid>
     {

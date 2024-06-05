@@ -1,4 +1,4 @@
-﻿namespace OpenBullet.ViewModels
+﻿namespace ThunderBullet.ViewModels
 {
     public class OBSettingsViewModel
     {

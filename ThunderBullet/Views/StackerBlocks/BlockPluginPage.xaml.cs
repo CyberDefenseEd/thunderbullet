@@ -3,12 +3,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Controls;
-using OpenBullet.Plugins;
-using OpenBullet.Views.UserControls;
+using ThunderBullet.Plugins;
+using ThunderBullet.Views.UserControls;
 using PluginFramework;
 using RuriLib;
 
-namespace OpenBullet.Views.StackerBlocks
+namespace ThunderBullet.Views.StackerBlocks
 {
     /// <summary>
     /// Logica di interazione per BlockPluginControl.xaml

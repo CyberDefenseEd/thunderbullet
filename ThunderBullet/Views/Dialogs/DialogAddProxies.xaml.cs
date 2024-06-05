@@ -7,9 +7,9 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Extreme.Net;
 using Microsoft.Win32;
-using OpenBullet.Views.Main;
+using ThunderBullet.Views.Main;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Logica di interazione per DialogAddProxies.xaml

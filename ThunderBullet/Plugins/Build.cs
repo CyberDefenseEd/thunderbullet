@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Reflection;
-using OpenBullet.Views.UserControls;
+using ThunderBullet.Views.UserControls;
 using PluginFramework.Attributes;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.Plugins
+namespace ThunderBullet.Plugins
 {
     public static class Build
     {

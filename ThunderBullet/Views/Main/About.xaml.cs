@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Windows.Controls;
 
-namespace OpenBullet.Views.Main
+namespace ThunderBullet.Views.Main
 {
     /// <summary>
     /// Logica di interazione per About.xaml

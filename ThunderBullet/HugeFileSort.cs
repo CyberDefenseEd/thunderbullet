@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace OpenBullet
+namespace ThunderBullet
 {
     /// <summary>
     /// Sorts lines in huge text files

@@ -6,7 +6,7 @@ using System.Windows.Media;
 using RuriLib.Models;
 using RuriLib.ViewModels;
 
-namespace OpenBullet.ViewModels
+namespace ThunderBullet.ViewModels
 {
     public class KeychainViewModel : ViewModelBase
     {
