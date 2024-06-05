@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace RuriLib.LS
 {
@@ -84,7 +82,7 @@ namespace RuriLib.LS
 
             // Create the actual block from the identifier
             BlockBase block = (Activator.CreateInstance(BlockMappings[identifier]) as BlockBase).FromLS(input);
-            
+
             // Set disabled
             if (block != null) block.Disabled = disabled;
 

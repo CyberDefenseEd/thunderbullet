@@ -1,9 +1,7 @@
-﻿using LiteDB;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Text;
+using LiteDB;
+using Newtonsoft.Json;
 
 namespace RuriLib.Models
 {
@@ -77,8 +75,8 @@ namespace RuriLib.Models
                 .Replace("<TYPE>", Type)
                 .Replace("<CAPTURE>", CapturedData.ToCaptureString());
 
-            foreach(var cap in CapturedData.All)
-                sb.Replace("<" + cap.Name + ">", cap.ToString());   
+            foreach (var cap in CapturedData.All)
+                sb.Replace("<" + cap.Name + ">", cap.ToString());
 
             return sb.ToString();
         }

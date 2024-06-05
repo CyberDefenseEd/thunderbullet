@@ -61,7 +61,7 @@ namespace RuriLib.ViewModels
 
         private string webhookUser = "Undefined";
         /// <summary>The username of the user that is calling the webhook, as it will be received by the remote API.</summary>
-        public string WebhookUser { get { return webhookUser; }  set { webhookUser = value; OnPropertyChanged(); } }
+        public string WebhookUser { get { return webhookUser; } set { webhookUser = value; OnPropertyChanged(); } }
 
         /// <summary>
         /// Resets the properties to their default value.

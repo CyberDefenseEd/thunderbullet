@@ -1,4 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Windows.Media;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Interactions;
@@ -6,13 +13,6 @@ using RuriLib.Functions.Files;
 using RuriLib.Functions.UserAgent;
 using RuriLib.LS;
 using RuriLib.ViewModels;
-using System;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Windows.Media;
 
 namespace RuriLib
 {
@@ -148,7 +148,7 @@ namespace RuriLib
         public override string ToLS(bool indent = true)
         {
             var writer = new BlockWriter(GetType(), indent, Disabled);
-            writer                
+            writer
                 .Label(Label)
                 .Token("BROWSERACTION")
                 .Token(Action)
@@ -193,7 +193,7 @@ namespace RuriLib
 
                 case BrowserAction.SendKeys:
                     keyActions = new Actions(data.Driver);
-                    foreach(var s in replacedInput.Split(new string[] { "||" }, StringSplitOptions.None))
+                    foreach (var s in replacedInput.Split(new string[] { "||" }, StringSplitOptions.None))
                     {
                         switch (s)
                         {
@@ -223,7 +223,7 @@ namespace RuriLib
                                 {
                                     keyActions.SendKeys(matchingField.GetValue(null).ToString());
                                 }
-                                else 
+                                else
                                 {
                                     keyActions.SendKeys(s);
                                 }
@@ -232,7 +232,7 @@ namespace RuriLib
                     }
                     keyActions.Perform();
                     Thread.Sleep(1000);
-                    if(replacedInput.Contains("<ENTER>") || replacedInput.Contains("<BACKSPACE>")) // These might lead to a page change
+                    if (replacedInput.Contains("<ENTER>") || replacedInput.Contains("<BACKSPACE>")) // These might lead to a page change
                         UpdateSeleniumData(data);
                     break;
 
@@ -292,7 +292,7 @@ namespace RuriLib
                     break;
 
                 case BrowserAction.GetCookies:
-                    foreach(var cookie in data.Driver.Manage().Cookies.AllCookies)
+                    foreach (var cookie in data.Driver.Manage().Cookies.AllCookies)
                     {
                         try { data.Cookies.Add(cookie.Name, cookie.Value); } catch { }
                     }
@@ -340,7 +340,7 @@ namespace RuriLib
                             ChromeOptions chromeop = new ChromeOptions();
                             ChromeDriverService chromeservice = ChromeDriverService.CreateDefaultService();
                             chromeservice.SuppressInitialDiagnosticInformation = true;
-                            chromeservice.HideCommandPromptWindow = true;   
+                            chromeservice.HideCommandPromptWindow = true;
                             chromeservice.EnableVerboseLogging = false;
                             chromeop.AddArgument("--log-level=3");
                             chromeop.BinaryLocation = data.GlobalSettings.Selenium.ChromeBinaryLocation;
@@ -368,7 +368,7 @@ namespace RuriLib
                             FirefoxOptions fireop = new FirefoxOptions();
                             FirefoxDriverService fireservice = FirefoxDriverService.CreateDefaultService();
                             FirefoxProfile fireprofile = new FirefoxProfile();
-                            
+
                             fireservice.SuppressInitialDiagnosticInformation = true;
                             fireservice.HideCommandPromptWindow = true;
                             fireop.AddArgument("--log-level=3");
@@ -402,10 +402,10 @@ namespace RuriLib
 
                             fireop.Profile = fireprofile;
                             data.Driver = new FirefoxDriver(fireservice, fireop, new TimeSpan(0, 1, 0));
-                            
+
                         }
-                        catch(Exception ex) { data.Log(new LogEntry(ex.ToString(), Colors.White)); return; }
-                        
+                        catch (Exception ex) { data.Log(new LogEntry(ex.ToString(), Colors.White)); return; }
+
                         break;
                 }
 

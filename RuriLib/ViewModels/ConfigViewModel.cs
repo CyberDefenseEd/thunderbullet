@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace RuriLib.ViewModels
+﻿namespace RuriLib.ViewModels
 {
     /// <summary>
     /// An observable wrapper around a Config object.
@@ -9,7 +7,7 @@ namespace RuriLib.ViewModels
     {
         /// <summary>The actual Config object.</summary>
         public Config Config { get; set; }
-        
+
         private string category = "Default";
         /// <summary>The Category of the config.</summary>
         public string Category { get { return category; } set { category = value; OnPropertyChanged(); } }

@@ -1,13 +1,11 @@
-﻿using Newtonsoft.Json;
-using RuriLib.Models;
-using RuriLib.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Media;
+using Newtonsoft.Json;
+using RuriLib.Models;
+using RuriLib.ViewModels;
 
 namespace RuriLib
 {
@@ -71,7 +69,7 @@ namespace RuriLib
         {
             // Clear log buffer
             data.LogBuffer.Clear();
-            data.Log(new LogEntry(string.Format("<--- Executing Block {0} --->", Label),Colors.Orange));
+            data.Log(new LogEntry(string.Format("<--- Executing Block {0} --->", Label), Colors.Orange));
         }
         #endregion
 
@@ -115,7 +113,7 @@ namespace RuriLib
                 for (var i = 0; i < max; i++)
                 {
                     var replaced = input;
-                    foreach(var variable in variables)
+                    foreach (var variable in variables)
                     {
                         var list = (List<string>)variable.Value;
                         if (list.Count > i)
@@ -135,7 +133,7 @@ namespace RuriLib
             // Regex parse the syntax <DICT(*)> (wildcard key -> returns list of all values)
             var match = Regex.Match(input, @"<([^\(]*)\(\*\)>");
 
-            if (match.Success)            
+            if (match.Success)
             {
                 var full = match.Groups[0].Value;
                 var name = match.Groups[1].Value;
@@ -179,8 +177,8 @@ namespace RuriLib
             // If no other match was a success, it means there's no recursive value and we simply add the input to the list
             toReplace.Add(input);
 
-            END:
-            // Now for each item in the list, do the normal replacement and return the replaced list of strings
+END:
+// Now for each item in the list, do the normal replacement and return the replaced list of strings
             return toReplace.Select(i => ReplaceValues(i, data)).ToList();
         }
 
@@ -211,8 +209,8 @@ namespace RuriLib
 
                 // Get all the inner (max. 1 level of nesting) variables
                 var matches = Regex.Matches(output, @"<([^<>]*)>");
-                
-                foreach(Match match in matches)
+
+                foreach (Match match in matches)
                 {
                     var full = match.Groups[0].Value;
                     var m = match.Groups[1].Value;
@@ -251,7 +249,7 @@ namespace RuriLib
                             break;
 
                         case CVar.VarType.Dictionary:
-                            
+
                             if (args.Contains("(") && args.Contains(")"))
                             {
                                 var dicKey = ParseArguments(args, '(', ')')[0];
@@ -349,7 +347,7 @@ namespace RuriLib
         /// <param name="suffix">The string to add at the end of the value</param>
         /// <param name="urlEncode">Whether to URLencode the values before creating the variables</param>
         /// <param name="createEmpty">Whether to create an empty (single) variable if the list of values is empty</param>
-        internal static void InsertVariable(BotData data, bool isCapture, bool recursive, IEnumerable<string> values, string variableName, 
+        internal static void InsertVariable(BotData data, bool isCapture, bool recursive, IEnumerable<string> values, string variableName,
             string prefix = "", string suffix = "", bool urlEncode = false, bool createEmpty = true)
         {
             var list = values.Select(v => ReplaceValues(prefix, data) + v.Trim() + ReplaceValues(suffix, data)).ToList();
@@ -386,7 +384,7 @@ namespace RuriLib
             }
 
             // If we don't want to save empty captures, and it's a capture, and the list is either an empty string or a list made of an empty string
-            if (!data.ConfigSettings.SaveEmptyCaptures && isCapture && 
+            if (!data.ConfigSettings.SaveEmptyCaptures && isCapture &&
                 (list.Count == 0 || list.Count > 0 && string.IsNullOrWhiteSpace(list.First())))
             {
                 variable = null;

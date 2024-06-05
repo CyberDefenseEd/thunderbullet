@@ -1,8 +1,7 @@
-﻿using RuriLib.Functions.Conditions;
+﻿using System.Collections.Generic;
+using RuriLib.Functions.Conditions;
 using RuriLib.LS;
 using RuriLib.Models;
-using System;
-using System.Collections.Generic;
 
 namespace RuriLib
 {
@@ -20,7 +19,7 @@ namespace RuriLib
         public bool BanOnToCheck { get { return banOnToCheck; } set { banOnToCheck = value; OnPropertyChanged(); } }
 
         /// <summary>The list of all keychains.</summary>
-        public List<KeyChain> KeyChains = new List<KeyChain>();        
+        public List<KeyChain> KeyChains = new List<KeyChain>();
 
         /// <summary>
         /// Creates a KeyCheck block.
@@ -100,7 +99,7 @@ namespace RuriLib
                 .Boolean(BanOn4XX, "BanOn4XX")
                 .Boolean(BanOnToCheck, "BanOnToCheck");
 
-            foreach(var kc in KeyChains)
+            foreach (var kc in KeyChains)
             {
                 writer
                     .Indent(1)
@@ -112,7 +111,7 @@ namespace RuriLib
 
                 writer.Token(kc.Mode);
 
-                foreach(var k in kc.Keys)
+                foreach (var k in kc.Keys)
                 {
                     if (k.LeftTerm == "<SOURCE>" && k.Comparer == Comparer.Contains)
                     {
@@ -140,7 +139,7 @@ namespace RuriLib
 
         /// <inheritdoc />
         public override void Process(BotData data)
-        {   
+        {
             base.Process(data);
 
             if (data.ResponseCode.StartsWith("4") && banOn4XX)

@@ -63,7 +63,7 @@ namespace RuriLib.Models
         {
             var valid = true;
             var variables = GetVariables(false);
-            foreach(var rule in rules)
+            foreach (var rule in rules)
             {
                 try
                 {
@@ -123,7 +123,7 @@ namespace RuriLib.Models
                     return input.Any(c => char.IsSymbol(c) || char.IsPunctuation(c));
 
                 default:
-                    foreach(var c in what.ToCharArray())
+                    foreach (var c in what.ToCharArray())
                     {
                         if (input.Contains(c)) return true;
                     }

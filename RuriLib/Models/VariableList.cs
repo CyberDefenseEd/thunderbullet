@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using RuriLib.Functions.Conditions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
+using RuriLib.Functions.Conditions;
 
 namespace RuriLib.Models
 {
@@ -45,7 +45,7 @@ namespace RuriLib.Models
         {
             All = list;
         }
-        
+
         /// <summary>
         /// Gets a variable given its name.
         /// </summary>
@@ -94,7 +94,7 @@ namespace RuriLib.Models
         /// </summary>
         /// <param name="name">The name of the Dictionary variable</param>
         /// <returns>The dictionary value or null if it wasn't found.</returns>
-        public Dictionary<string,string> GetDictionary(string name)
+        public Dictionary<string, string> GetDictionary(string name)
         {
             try { return (Dictionary<string, string>)Get(name, CVar.VarType.Dictionary).Value; }
             catch { return null; }
@@ -152,7 +152,7 @@ namespace RuriLib.Models
         /// </summary>
         /// <param name="variable">The CVar object to add</param>
         public void SetNew(CVar variable)
-        {           
+        {
             if (!VariableExists(variable.Name)) Set(variable);
         }
 

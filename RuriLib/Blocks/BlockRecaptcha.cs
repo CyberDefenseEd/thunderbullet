@@ -1,8 +1,8 @@
-﻿using RuriLib.Functions.Captchas;
+﻿using System;
+using System.Windows.Media;
+using RuriLib.Functions.Captchas;
 using RuriLib.LS;
 using RuriLib.Models;
-using System;
-using System.Windows.Media;
 
 namespace RuriLib
 {
@@ -79,7 +79,7 @@ namespace RuriLib
         /// <inheritdoc />
         public override void Process(BotData data)
         {
-            if(!data.GlobalSettings.Captchas.BypassBalanceCheck)
+            if (!data.GlobalSettings.Captchas.BypassBalanceCheck)
                 base.Process(data);
 
             data.Log(new LogEntry("WARNING! This block is obsolete and WILL BE REMOVED IN THE FUTURE! Use the SOLVECAPTCHA block!", Colors.Tomato));

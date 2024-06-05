@@ -1,9 +1,9 @@
-﻿using CaptchaSharp.Enums;
+﻿using System;
+using System.Windows.Media;
+using CaptchaSharp.Enums;
 using CaptchaSharp.Exceptions;
 using RuriLib.Functions.Captchas;
 using RuriLib.LS;
-using System;
-using System.Windows.Media;
 
 namespace RuriLib
 {
@@ -78,8 +78,11 @@ namespace RuriLib
                 }
             }
             catch (TaskReportException ex) { errorMessage = $"The captcha report was not accepted! {ex.Message}"; }
-            catch (NotSupportedException ex) { errorMessage = 
-                    $"The currently selected service ({data.GlobalSettings.Captchas.CurrentService}) does not support reports! {ex.Message}"; }
+            catch (NotSupportedException ex)
+            {
+                errorMessage =
+                    $"The currently selected service ({data.GlobalSettings.Captchas.CurrentService}) does not support reports! {ex.Message}";
+            }
             catch (Exception ex) { errorMessage = $"An error occurred! {ex.Message}"; }
 
             data.Log(new LogEntry(errorMessage, Colors.Tomato));

@@ -1,8 +1,6 @@
-﻿using RuriLib.Models;
-using RuriLib.ViewModels;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Media;
+using RuriLib.ViewModels;
 
 namespace RuriLib.Models
 {
@@ -29,7 +27,7 @@ namespace RuriLib.Models
             /// <summary>Sets a CUSTOM status in the bot.</summary>
             Custom
         }
-        
+
         /// <summary>The mode in which the keys should be checked.</summary>
         public enum KeychainMode
         {
@@ -54,7 +52,7 @@ namespace RuriLib.Models
 
         /// <summary>The collection of Keys in the KeyChain.</summary>
         public ObservableCollection<Key> Keys { get; set; } = new ObservableCollection<Key>();
-        
+
         /// <summary>
         /// Checks all the Keys in the KeyChain.
         /// </summary>
@@ -69,7 +67,7 @@ namespace RuriLib.Models
                     {
                         if (key.CheckKey(data))
                         {
-                            data.Log(new LogEntry(string.Format("Found 'OR' Key {0} {1} {2}", 
+                            data.Log(new LogEntry(string.Format("Found 'OR' Key {0} {1} {2}",
                                 BlockBase.TruncatePretty(BlockBase.ReplaceValues(key.LeftTerm, data), 20),
                                 key.Comparer.ToString(),
                                 BlockBase.ReplaceValues(key.RightTerm, data)),
@@ -86,7 +84,7 @@ namespace RuriLib.Models
                             return false;
                         else
                         {
-                            data.Log(new LogEntry(string.Format("Found 'AND' Key {0} {1} {2}", 
+                            data.Log(new LogEntry(string.Format("Found 'AND' Key {0} {1} {2}",
                                 BlockBase.TruncatePretty(BlockBase.ReplaceValues(key.LeftTerm, data), 20),
                                 key.Comparer.ToString(),
                                 BlockBase.ReplaceValues(key.RightTerm, data)),

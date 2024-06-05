@@ -1,10 +1,9 @@
-﻿using Newtonsoft.Json;
-using RuriLib.Models;
-using RuriLib.ViewModels;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Newtonsoft.Json;
+using RuriLib.Models;
+using RuriLib.ViewModels;
 
 namespace RuriLib
 {

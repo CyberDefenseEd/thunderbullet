@@ -1,10 +1,8 @@
-﻿using RuriLib.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RuriLib.ViewModels;
 
 namespace RuriLib.Models
 {
@@ -47,7 +45,7 @@ namespace RuriLib.Models
         public DataPool(string charSet, int length)
         {
             List = charSet.Select(x => x.ToString());
-            for (int i = 0; i < length; i++)  
+            for (int i = 0; i < length; i++)
                 List = List.SelectMany(x => charSet, (x, y) => x + y);
             Size = (int)Math.Pow(charSet.Length, length);
         }

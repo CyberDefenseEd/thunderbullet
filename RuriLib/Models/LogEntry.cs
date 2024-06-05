@@ -1,6 +1,6 @@
-﻿using RuriLib.ViewModels;
-using System;
+﻿using System;
 using System.Windows.Media;
+using RuriLib.ViewModels;
 
 namespace RuriLib
 {

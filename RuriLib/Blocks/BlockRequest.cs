@@ -1,17 +1,12 @@
-﻿using Extreme.Net;
-using RuriLib.Functions.Formats;
-using RuriLib.LS;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.IO.Compression;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Windows.Media;
-using RuriLib.Functions.Requests;
+using Extreme.Net;
 using RuriLib.Functions.Files;
+using RuriLib.Functions.Requests;
+using RuriLib.LS;
 using MultipartContent = RuriLib.Functions.Requests.MultipartContent;
 
 namespace RuriLib
@@ -151,7 +146,7 @@ namespace RuriLib
         private string outputVariable = "";
         /// <summary>The variable name for Base64String response.</summary>
         public string OutputVariable { get { return outputVariable; } set { outputVariable = value; OnPropertyChanged(); } }
-        
+
         private bool saveAsScreenshot = false;
         /// <summary>Whether to add the downloaded image to the default screenshot path.</summary>
         public bool SaveAsScreenshot { get { return saveAsScreenshot; } set { saveAsScreenshot = value; OnPropertyChanged(); } }
@@ -333,7 +328,7 @@ namespace RuriLib
                     break;
 
                 case RequestType.Multipart:
-                    foreach(var c in MultipartContents)
+                    foreach (var c in MultipartContents)
                     {
                         writer
                             .Indent()
@@ -426,7 +421,7 @@ namespace RuriLib
 
             var localUrl = ReplaceValues(Url, data);
             data.Log(new LogEntry($"Calling URL: {localUrl}", Colors.MediumTurquoise));
-            
+
             // Set content
             switch (RequestType)
             {
@@ -463,8 +458,8 @@ namespace RuriLib
 
             // Set headers
             data.Log(new LogEntry("Sent Headers:", Colors.DarkTurquoise));
-            var headers = CustomHeaders.Select( h =>
-                    new KeyValuePair<string, string> (ReplaceValues(h.Key, data), ReplaceValues(h.Value, data))
+            var headers = CustomHeaders.Select(h =>
+                    new KeyValuePair<string, string>(ReplaceValues(h.Key, data), ReplaceValues(h.Value, data))
                 ).ToDictionary(h => h.Key, h => h.Value);
             request.SetHeaders(headers, AcceptEncoding, GetLogBuffer(data));
 
@@ -611,12 +606,13 @@ namespace RuriLib
         public void SetMultipartContents(string[] lines)
         {
             MultipartContents.Clear();
-            foreach(var line in lines)
+            foreach (var line in lines)
             {
                 try
                 {
                     var split = line.Split(new[] { ':' }, 3);
-                    MultipartContents.Add(new MultipartContent() {
+                    MultipartContents.Add(new MultipartContent()
+                    {
                         Type = (MultipartContentType)Enum.Parse(typeof(MultipartContentType), split[0].Trim(), true),
                         Name = split[1].Trim(),
                         Value = split[2].Trim()

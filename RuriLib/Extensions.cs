@@ -1,12 +1,10 @@
-﻿using RuriLib.Functions.Requests;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Authentication;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using RuriLib.Functions.Requests;
 
 namespace RuriLib
 {

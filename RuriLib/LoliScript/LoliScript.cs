@@ -1,15 +1,15 @@
-﻿using IronPython.Compiler;
-using IronPython.Hosting;
-using IronPython.Runtime;
-using Jint;
-using RuriLib.Functions.Conditions;
-using RuriLib.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Media;
+using IronPython.Compiler;
+using IronPython.Hosting;
+using IronPython.Runtime;
+using Jint;
+using RuriLib.Functions.Conditions;
+using RuriLib.Models;
 
 namespace RuriLib.LS
 {
@@ -153,7 +153,8 @@ namespace RuriLib.LS
                     {
                         list.Add(BlockParser.Parse(c));
                     }
-                    catch (Exception ex) {
+                    catch (Exception ex)
+                    {
                         var line = c;
                         line = BlockBase.TruncatePretty(line, 50);
                         throw new Exception($"Exception while parsing block {line}\nReason: {ex.Message}");
@@ -224,7 +225,7 @@ namespace RuriLib.LS
                 return;
             }
 
-            TAKELINE:
+TAKELINE:
 
             CurrentLine = lines[i];
 
@@ -237,7 +238,7 @@ namespace RuriLib.LS
 
             // Lookahead to compact lines. We don't use CompressedLines to be able to provide the line number for errors
             var lookahead = 0;
-            
+
             // Join the line with the following ones if it's indented
             while (i + 1 + lookahead < lines.Count())
             {
@@ -266,7 +267,7 @@ namespace RuriLib.LS
                     {
                         // We log the error message
                         data.LogBuffer.Add(new LogEntry("ERROR: " + ex.Message, Colors.Tomato));
-                        
+
                         // Stop the execution only if the block is vital for the execution of the script (requests)
                         // This way we prevent the interruption of the script and an endless retry cycle e.g. if we fail to parse a response given a specific input
                         if (block != null && (
@@ -349,7 +350,7 @@ namespace RuriLib.LS
 
                         case "BEGIN":
                             var beginToken = LineParser.ParseToken(ref cfLine, TokenType.Parameter, true);
-                            switch (beginToken.ToUpper()) 
+                            switch (beginToken.ToUpper())
                             {
                                 case "SCRIPT":
                                     language = (ScriptingLanguage)LineParser.ParseEnum(ref cfLine, "LANGUAGE", typeof(ScriptingLanguage));

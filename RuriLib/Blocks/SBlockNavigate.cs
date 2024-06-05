@@ -1,6 +1,6 @@
-﻿using RuriLib.LS;
-using System;
+﻿using System;
 using System.Windows.Media;
+using RuriLib.LS;
 
 namespace RuriLib
 {
@@ -71,13 +71,13 @@ namespace RuriLib
         {
             base.Process(data);
 
-            if(data.Driver == null)
+            if (data.Driver == null)
             {
                 data.Log(new LogEntry("Open a browser first!", Colors.White));
                 throw new Exception("Browser not open");
             }
-            
-            data.Log(new LogEntry("Navigating to "+ReplaceValues(url,data), Colors.White));
+
+            data.Log(new LogEntry("Navigating to " + ReplaceValues(url, data), Colors.White));
             data.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(timeout);
             try
             {

@@ -1,8 +1,8 @@
-﻿using RuriLib.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using RuriLib.Models;
 
 namespace RuriLib.Interfaces
 {

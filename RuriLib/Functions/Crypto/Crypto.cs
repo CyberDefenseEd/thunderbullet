@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
-using System.Globalization;
-using System.Numerics;
 
 namespace RuriLib.Functions.Crypto
 {
@@ -298,7 +298,7 @@ namespace RuriLib.Functions.Crypto
 
             return Convert.ToBase64String(RSA.Decrypt(Convert.FromBase64String(dataToDecrypt), doOAEPPadding));
         }
-        
+
         /// <summary>
         /// Encrypts a string using RSA.
         /// </summary>
@@ -311,7 +311,8 @@ namespace RuriLib.Functions.Crypto
         {
             return RSAEncrypt(
                 data,
-                new RSAParameters { 
+                new RSAParameters
+                {
                     Modulus = Encoding.UTF8.GetBytes(n),
                     Exponent = Encoding.UTF8.GetBytes(e)
                 },

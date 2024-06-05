@@ -1,16 +1,15 @@
-﻿using Extreme.Net;
-using RuriLib.Functions.Formats;
-using RuriLib.Models;
-using RuriLib.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using RuriLib.Functions.Files;
 using System.Windows.Media;
+using Extreme.Net;
 using RuriLib.Functions.Conversions;
+using RuriLib.Functions.Formats;
+using RuriLib.Models;
+using RuriLib.ViewModels;
 
 namespace RuriLib.Functions.Requests
 {
@@ -174,7 +173,7 @@ namespace RuriLib.Functions.Requests
             var bdry = boundary != string.Empty ? boundary : GenerateMultipartBoundary();
             content = new Extreme.Net.MultipartContent(bdry);
             var mContent = content as Extreme.Net.MultipartContent;
-            
+
             if (log != null)
             {
                 log.Add(new LogEntry($"Content-Type: multipart/form-data; boundary={bdry}", Colors.MediumTurquoise));
@@ -194,7 +193,7 @@ namespace RuriLib.Functions.Requests
                     mContent.Add(new FileContent(c.Value), c.Name, c.Value, c.ContentType);
                     if (log != null) log.Add(new LogEntry($"Content-Disposition: form-data; name=\"{c.Name}\"; filename=\"{c.Value}\"{Environment.NewLine}Content-Type: {c.ContentType}{Environment.NewLine}{Environment.NewLine}[FILE CONTENT OMITTED]", Colors.MediumTurquoise));
                 }
-                
+
                 if (log != null) log.Add(new LogEntry(bdry, Colors.MediumTurquoise));
             }
 
@@ -337,7 +336,7 @@ namespace RuriLib.Functions.Requests
             catch (Exception ex)
             {
                 if (log != null) log.Add(new LogEntry(ex.Message, Colors.White));
-                
+
                 if (ex.GetType() == typeof(HttpException))
                 {
                     responseCode = ((HttpException)ex).HttpStatusCode.ToString();

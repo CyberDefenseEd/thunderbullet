@@ -19,7 +19,7 @@ namespace RuriLib.Models
         private string rightTerm = "";
         /// <summary>The right-hand term of the comparison.</summary>
         public string RightTerm { get { return rightTerm; } set { rightTerm = value; OnPropertyChanged(); } }
-        
+
         /// <summary>
         /// Checks the comparison between left and right member.
         /// </summary>

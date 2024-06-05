@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RuriLib.LS
 {
@@ -69,7 +65,7 @@ namespace RuriLib.LS
             if (property != string.Empty && CheckDefault(literal, property)) return this;
             Write($"\"{literal.Replace("\\", "\\\\").Replace("\"", "\\\"")}\" ");
             return this;
-        }        
+        }
 
         /// <summary>
         /// Writes an Arrow (->) and a space.

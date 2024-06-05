@@ -1,5 +1,5 @@
-﻿using RuriLib.Runner;
-using System;
+﻿using System;
+using RuriLib.Runner;
 
 namespace RuriLib.Models
 {

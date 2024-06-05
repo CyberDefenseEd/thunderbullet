@@ -1,9 +1,9 @@
-﻿using CaptchaSharp;
+﻿using System;
+using CaptchaSharp;
 using CaptchaSharp.Services;
 using CaptchaSharp.Services.More;
 using RuriLib.Enums;
 using RuriLib.ViewModels;
-using System;
 
 namespace RuriLib.Functions.Captchas
 {

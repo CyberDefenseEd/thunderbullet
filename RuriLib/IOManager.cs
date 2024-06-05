@@ -1,11 +1,10 @@
-﻿using Newtonsoft.Json;
-using RuriLib.Models;
-using RuriLib.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Media;
+using Newtonsoft.Json;
+using RuriLib.Models;
 
 namespace RuriLib
 {
@@ -260,7 +259,7 @@ namespace RuriLib
                             System.Drawing.Color.FromName(pair[1]).B);
                         break;
                 }
-                
+
                 prop.SetValue(obj, value);
             }
             return obj;

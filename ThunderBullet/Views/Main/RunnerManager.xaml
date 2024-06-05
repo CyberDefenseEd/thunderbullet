@@ -1,0 +1,175 @@
+﻿<Page x:Class="OpenBullet.Views.Main.RunnerManager"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OpenBullet.Views.Main"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="780"
+      Title="RunnerManager">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,15,0,0">
+            <Button x:Name="addRunnerButton" Click="addRunnerButton_Click" Background="{DynamicResource BackgroundSecondary}" Margin="5,0,0,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <TextBlock VerticalAlignment="Center" Margin="12 0">New</TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="startAllRunnersButton" Click="startAllRunnersButton_Click" Background="{DynamicResource BackgroundSecondary}" Margin="5,0,0,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <TextBlock VerticalAlignment="Center" Margin="12 0">Start All</TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="stopAllRunnersButton" Click="stopAllRunnersButton_Click" Background="{DynamicResource BackgroundSecondary}" Margin="5,0,0,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <TextBlock VerticalAlignment="Center" Margin="12 0">Stop All</TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="removeAllRunnersButton" Click="removeAllRunnersButton_Click" Background="{DynamicResource BackgroundSecondary}" Margin="5,0,0,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <TextBlock VerticalAlignment="Center" Margin="12 0">Remove All</TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <Button x:Name="menuOptionConfigCreator" Background="{DynamicResource BackgroundSecondary}" Margin="5,0,0,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <TextBlock VerticalAlignment="Center" Margin="12 0">View Configs</TextBlock>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+         
+            <Label Content="Click on a 'Runner' for a detailed information panel" RenderTransformOrigin="0.5,30">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.366"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.309"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="5">
+            <ItemsControl x:Name="runnersControl" ItemsSource="{Binding RunnersCollection}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical" Margin="0 10"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="{DynamicResource BackgroundSecondary}" Padding="15" CornerRadius="5" Margin="0,8,0,0">
+                            <Grid x:Name="runnerInstanceGrid" Tag="{Binding Id}" MouseDown="runnerInstanceGrid_MouseDown" >
+
+                                <Grid.Style>
+                                    <Style TargetType="{x:Type Grid}">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="{DynamicResource BackgroundSecondary}"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <!--FIRST ROW-->
+                                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Label Content="Config:" FontWeight="Bold" MouseDown="selectConfig_MouseDown"/>
+                                    <Label Content="{Binding ViewModel.ConfigName}" MouseDown="selectConfig_MouseDown"/>
+                                    <Label Content="Wordlist:" FontWeight="Bold" MouseDown="selectWordlist_MouseDown" Margin="4,0,0,0"/>
+                                    <Label Content="{Binding ViewModel.WordlistName}" MouseDown="selectWordlist_MouseDown"/>
+                                    <Label Content="Bots:" FontWeight="Bold" MouseDown="selectBots_MouseDown" Margin="4,0,0,0"/>
+                                    <Label Content="{Binding ViewModel.BotsAmount}" MouseDown="selectBots_MouseDown"/>
+                                    <Label Content="Proxies:" FontWeight="Bold" MouseDown="selectProxies_MouseDown" Margin="4,0,0,0"/>
+                                    <Label Content="{Binding ViewModel.ProxyMode}" MouseDown="selectProxies_MouseDown"/>
+                                    <Label Content="STATUS:" FontWeight="Bold" Foreground="{DynamicResource ForegroundRetry}" Margin="4,0,0,0"/>
+                                    <Label Content="{Binding ViewModel.WorkerStatus}" Foreground="{DynamicResource ForegroundRetry}"/>
+                                </StackPanel>
+
+                                <!--SECOND ROW-->
+                                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" >
+                                    <Label Content="Hits:" FontWeight="Bold" Foreground="{DynamicResource ForegroundGood}"/>
+                                    <Label Content="{Binding ViewModel.HitCount}" Foreground="{DynamicResource ForegroundGood}"/>
+                                    <Label Content="Custom:" FontWeight="Bold" Foreground="{DynamicResource ForegroundCustom}" Margin="4,0,0,0"/>
+                                    <Label Content="{Binding ViewModel.CustomCount}" Foreground="{DynamicResource ForegroundCustom}"/>
+                                    <Label Content="ToCheck:" FontWeight="Bold" Foreground="{DynamicResource ForegroundToCheck}" Margin="4,0,0,0"/>
+                                    <Label Content="{Binding ViewModel.ToCheckCount}" Foreground="{DynamicResource ForegroundToCheck}"/>
+                                    <!--
+                                    <Label Content="Progress: " FontWeight="Bold"/>
+                                    <Label Content="{Binding ViewModel.ProgressCount}" />
+                                    <Label Content="/" />
+                                    <Label Content="{Binding ViewModel.WordlistSize}"/>
+                                    <Label Content="("/> <Label Content="{Binding ViewModel.Progress}"/> <Label Content="%)"/> 
+                                    -->
+                                    <Label Content="Clicks Per Minuite:" FontWeight="Bold" Margin="4,0,0,0"/>
+                                    <Label Content="{Binding ViewModel.CPM}" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Tag="{Binding Id}" x:Name="startRunnerButton" Click="startRunnerButton_Click" Width="100" Background="{DynamicResource BackgroundMain}" Margin="0,0,0,0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5">START/STOP</TextBlock>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                    <Button Tag="{Binding Id}" x:Name="removeRunnerButton" Click="removeRunnerButton_Click" Width="100" Background="{DynamicResource BackgroundMain}" Margin="5,0,0,0">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5">DELETE</TextBlock>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        
+    </Grid>
+</Page>

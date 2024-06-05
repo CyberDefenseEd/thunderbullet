@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RuriLib.Models.Stats
+﻿namespace RuriLib.Models.Stats
 {
     /// <summary>
     /// A container for all data-related statistics of an IRunner.

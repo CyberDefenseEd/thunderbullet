@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RuriLib.Functions.Formats
+﻿namespace RuriLib.Functions.Formats
 {
     /// <summary>
     /// Provides methods for encoding data in various formats.

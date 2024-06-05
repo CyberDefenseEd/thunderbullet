@@ -1,0 +1,26 @@
+﻿<Application x:Class="OpenBullet.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Colors -->
+            <SolidColorBrush x:Key="ThemeMain" Color="#5865f2" />
+            <SolidColorBrush x:Key="BackgroundMain" Color="#0d0d0c" />
+            <SolidColorBrush x:Key="BackgroundSecondary" Color="#1f1f1f" />
+            <SolidColorBrush x:Key="ForegroundMain" Color="#e3e3e3" />
+            <SolidColorBrush x:Key="ForegroundGood" Color="#b1ffa4"/>
+            <SolidColorBrush x:Key="ForegroundBad" Color="#ffa4ac"/>
+            <SolidColorBrush x:Key="ForegroundCustom" Color="#ffc9a4"/>
+            <SolidColorBrush x:Key="ForegroundRetry" Color="#fffda4"/>
+            <SolidColorBrush x:Key="ForegroundToCheck" Color="#a4e8ff"/>
+            <SolidColorBrush x:Key="ForegroundMenuSelected" Color="#5865f2"/>
+            <SolidColorBrush x:Key="Headers" />
+            <!-- Fonts -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

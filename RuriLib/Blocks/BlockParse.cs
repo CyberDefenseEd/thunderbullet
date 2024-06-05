@@ -1,13 +1,9 @@
-﻿using AngleSharp.Html.Parser;
-using Extreme.Net;
-using Newtonsoft.Json.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using RuriLib.LS;
 using RuriLib.Utils.Parsing;
-using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Windows.Media;
-using System.Linq;
 
 namespace RuriLib
 {
@@ -277,7 +273,7 @@ namespace RuriLib
                 .Literal(VariableName);
 
             if (!writer.CheckDefault(Prefix, "Prefix") || !writer.CheckDefault(Suffix, "Suffix"))
-                    writer.Literal(Prefix).Literal(Suffix);
+                writer.Literal(Prefix).Literal(Suffix);
 
             return writer.ToString();
         }

@@ -1,9 +1,4 @@
-﻿using RuriLib.Functions.Crypto;
-using RuriLib.Functions.Formats;
-using RuriLib.Functions.Time;
-using RuriLib.Functions.UserAgent;
-using RuriLib.LS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
@@ -14,6 +9,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Media;
+using RuriLib.Functions.Crypto;
+using RuriLib.Functions.Formats;
+using RuriLib.Functions.Time;
+using RuriLib.Functions.UserAgent;
+using RuriLib.LS;
 
 namespace RuriLib
 {
@@ -68,9 +68,9 @@ namespace RuriLib
 
             /// <summary>Decodes a URL-encoded input.</summary>
             URLDecode,
-            
+
             /// <summary>Unescapes characters in a string.</summary>
-            Unescape,      
+            Unescape,
 
             /// <summary>Encodes the input to be displayed in HTML or XML.</summary>
             HTMLEntityEncode,
@@ -328,7 +328,7 @@ namespace RuriLib
         private static readonly string _upperlwr = _lowercase + _uppercase;
         private static readonly string _ludChars = _lowercase + _uppercase + _digits;
         private static readonly string _allChars = _lowercase + _uppercase + _digits + _symbols;
-        
+
         #endregion
 
         /// <summary>
@@ -424,7 +424,7 @@ namespace RuriLib
                         RandomMin = LineParser.ParseInt(ref input, "Minimum").ToString();
                         RandomMax = LineParser.ParseInt(ref input, "Maximum").ToString();
                     }
-                    
+
                     if (LineParser.Lookahead(ref input) == TokenType.Boolean)
                         LineParser.SetBool(ref input, this);
                     break;
@@ -605,14 +605,14 @@ namespace RuriLib
                         .Boolean(RsaOAEP, nameof(RsaOAEP));
                     break;
 
-                    /*
-                case Function.RSADecrypt:
-                    writer
-                        .Literal(RsaN)
-                        .Literal(RsaD)
-                        .Boolean(RsaOAEP, "RsaOAEP");
-                    break;
-                    */
+                /*
+            case Function.RSADecrypt:
+                writer
+                    .Literal(RsaN)
+                    .Literal(RsaD)
+                    .Boolean(RsaOAEP, "RsaOAEP");
+                break;
+                */
 
                 case Function.RSAPKCS1PAD2:
                     writer
@@ -646,7 +646,7 @@ namespace RuriLib
                         .Integer(KdfKeySize)
                         .Token(KdfAlgorithm);
                     break;
-                        
+
             }
 
             writer
@@ -824,16 +824,16 @@ namespace RuriLib
                             );
                         break;
 
-                        /*
-                    case Function.RSADecrypt:
-                        outputString = Crypto.RSADecrypt(
-                            localInputString,
-                            ReplaceValues(RsaN, data),
-                            ReplaceValues(RsaD, data),
-                            RsaOAEP
-                            );
-                        break;
-                        */
+                    /*
+                case Function.RSADecrypt:
+                    outputString = Crypto.RSADecrypt(
+                        localInputString,
+                        ReplaceValues(RsaN, data),
+                        ReplaceValues(RsaD, data),
+                        RsaOAEP
+                        );
+                    break;
+                    */
 
                     case Function.RSAPKCS1PAD2:
                         outputString = Crypto.RSAPkcs1Pad2(
@@ -910,7 +910,7 @@ namespace RuriLib
         {
             var rawInput = inputBase64 ? Convert.FromBase64String(baseString) : Encoding.UTF8.GetBytes(baseString);
             byte[] digest;
-            
+
             switch (type)
             {
                 case Hash.MD4:

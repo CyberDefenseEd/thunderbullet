@@ -1,13 +1,10 @@
-﻿using Extreme.Net;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Media;
+using Extreme.Net;
 using OpenQA.Selenium.Remote;
-using RuriLib.Enums;
 using RuriLib.Models;
 using RuriLib.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Net.Security;
-using System.Net.Sockets;
-using System.Windows.Media;
 
 namespace RuriLib
 {
@@ -90,7 +87,8 @@ namespace RuriLib
 
         #region Response
         /// <summary>The return Address of the HttpResponse.</summary>
-        public string Address {
+        public string Address
+        {
             get { return Variables.Get("ADDRESS").Value; }
             set { Variables.SetHidden("ADDRESS", value); }
         }
@@ -173,9 +171,9 @@ namespace RuriLib
             Cookies = new Dictionary<string, string>();
             ResponseHeaders = new Dictionary<string, string>();
             try { foreach (var v in Data.GetVariables(ConfigSettings.EncodeData)) Variables.Set(v); } catch { }
-            
+
             GlobalVariables = new VariableList();
-            GlobalCookies = new CookieDictionary();            
+            GlobalCookies = new CookieDictionary();
             LogBuffer = new List<LogEntry>();
             Driver = null;
             BrowserOpen = false;

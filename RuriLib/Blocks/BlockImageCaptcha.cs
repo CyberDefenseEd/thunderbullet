@@ -1,13 +1,13 @@
-﻿using RuriLib.LS;
-using RuriLib.Models;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Media;
-using RuriLib.Functions.Download;
-using System.Collections.Generic;
 using RuriLib.Functions.Captchas;
+using RuriLib.Functions.Download;
+using RuriLib.LS;
+using RuriLib.Models;
 
 namespace RuriLib
 {
@@ -102,7 +102,7 @@ namespace RuriLib
         /// <inheritdoc />
         public override void Process(BotData data)
         {
-            if(!data.GlobalSettings.Captchas.BypassBalanceCheck)
+            if (!data.GlobalSettings.Captchas.BypassBalanceCheck)
                 base.Process(data);
 
             var localUrl = ReplaceValues(url, data);
@@ -139,7 +139,7 @@ namespace RuriLib
             }
 
             string response = "";
-            
+
             var bitmap = new Bitmap(captchaFile);
             try
             {
@@ -149,7 +149,7 @@ namespace RuriLib
                 response = Captchas.GetService(data.GlobalSettings.Captchas)
                     .SolveImageCaptchaAsync(Convert.ToBase64String(bytes)).Result.Response;
             }
-            catch(Exception ex) { data.Log(new LogEntry(ex.Message, Colors.Tomato)); throw; }
+            catch (Exception ex) { data.Log(new LogEntry(ex.Message, Colors.Tomato)); throw; }
             finally { bitmap.Dispose(); }
 
             data.Log(response == string.Empty ? new LogEntry("Couldn't get a response from the service", Colors.Tomato) : new LogEntry("Succesfully got the response: " + response, Colors.GreenYellow));

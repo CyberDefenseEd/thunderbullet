@@ -1,7 +1,7 @@
-﻿using RuriLib.Functions.Conditions;
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows.Media;
+using RuriLib.Functions.Conditions;
 
 namespace RuriLib.LS
 {
@@ -29,10 +29,10 @@ namespace RuriLib.LS
                 switch (field)
                 {
                     case "COOKIE":
-                        if(LineParser.Lookahead(ref input) == TokenType.Parameter)
+                        if (LineParser.Lookahead(ref input) == TokenType.Parameter)
                             comparer = (Comparer)LineParser.ParseEnum(ref input, "TYPE", typeof(Comparer));
                         name = LineParser.ParseLiteral(ref input, "NAME");
-                        for (int i=0; i<data.Cookies.Count; i++)
+                        for (int i = 0; i < data.Cookies.Count; i++)
                         {
                             var curr = data.Cookies.ToList()[i].Key;
                             if (Condition.ReplaceAndVerify(curr, comparer, name, data)) data.Cookies.Remove(curr);

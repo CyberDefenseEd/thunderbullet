@@ -1,11 +1,4 @@
-﻿using Extreme.Net;
-using Newtonsoft.Json;
-using RuriLib.Interfaces;
-using RuriLib.LS;
-using RuriLib.Models;
-using RuriLib.Models.Stats;
-using RuriLib.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -16,6 +9,13 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using Extreme.Net;
+using Newtonsoft.Json;
+using RuriLib.Interfaces;
+using RuriLib.LS;
+using RuriLib.Models;
+using RuriLib.Models.Stats;
+using RuriLib.ViewModels;
 
 namespace RuriLib.Runner
 {
@@ -54,7 +54,7 @@ namespace RuriLib.Runner
             OnPropertyChanged("ControlsEnabled");
         }
         #endregion
-        
+
         #region Settings
         private RLSettingsViewModel Settings { get; set; }
         private EnvironmentSettings Env { get; set; }
@@ -96,18 +96,28 @@ namespace RuriLib.Runner
             {
                 int ret = 0;
 
-                try {
-                    double curr = TestedCount + StartingPoint - 1;
-                    double tot = DataPool.Size;
-                    double ratio = curr / tot;
-                    double percent = ratio * 100;
-                    ret = (int)percent;
+                try
+                {
+                    if (TestedCount != null && StartingPoint != null && DataPool != null && DataPool.Size != null)
+                    {
+                        double curr = TestedCount + StartingPoint - 1;
+                        var size = DataPool.Size;
+                        double tot = size;
+                        double ratio = curr / tot;
+                        double percent = ratio * 100;
+                        ret = (int)percent;
+                    }
                 }
-                catch { }
+                catch (NullReferenceException ex)
+                {
+                    // Handle the exception or log it for debugging
+                    Console.WriteLine("Null reference exception occurred: " + ex.Message);
+                }
 
                 return Clamp(ret, 0, 100);
             }
         }
+
 
         private int cpm = 0;
         /// <summary>The checks per minute.</summary>
@@ -156,9 +166,9 @@ namespace RuriLib.Runner
         public ProxyMode ProxyMode { get { return proxyMode; } set { proxyMode = value; OnPropertyChanged(); } }
 
         /// <summary>Whether proxies can be used for the current session given the Proxy Mode and the Config.</summary>
-        public bool UseProxies 
-        { 
-            get 
+        public bool UseProxies
+        {
+            get
             {
                 if (Config != null)
                 {
@@ -168,7 +178,7 @@ namespace RuriLib.Runner
                 {
                     return true;
                 }
-            } 
+            }
         }
 
         /// <summary>The loaded Config to use for the check.</summary>
@@ -191,7 +201,7 @@ namespace RuriLib.Runner
 
         /// <summary>The total amount of proxies loaded.</summary>
         public int TotalProxiesCount { get { return ProxyPool.Proxies.Count; } }
-        
+
         /// <summary>The amount of proxies loaded that are alive.</summary>
         public int AliveProxiesCount { get { return ProxyPool.Alive.Count; } }
 
@@ -208,10 +218,10 @@ namespace RuriLib.Runner
         public DataPool DataPool { get; set; }
 
         /// <summary>The size of the DataPool.</summary>
-        public int DataSize 
-        { 
-            get 
-            { 
+        public int DataSize
+        {
+            get
+            {
                 if (DataPool != null)
                 {
                     return DataPool.Size;
@@ -220,7 +230,7 @@ namespace RuriLib.Runner
                 {
                     return 0;
                 }
-            } 
+            }
         }
         #endregion
 
@@ -293,13 +303,13 @@ namespace RuriLib.Runner
         #region Locks
         /// <summary>Whether the workers are waiting for proxies to be reloaded.</summary>
         private bool IsReloadingProxies { get; set; } = false;
-        
+
         /// <summary>Whether the CPM is already being calculated.</summary>
         private bool IsCPMLocked { get; set; } = false;
-        
+
         /// <summary>Whether the warning about no proxy availability has already been issued.</summary>
         private bool NoProxyWarningSent { get; set; } = false;
-        
+
         /// <summary>Whether the Custom Inputs have already been initialized.</summary>
         public bool CustomInputsInitialized { get; set; } = false;
         #endregion
@@ -486,7 +496,7 @@ namespace RuriLib.Runner
                 bot.Worker.DoWork += new DoWorkEventHandler(RunBot);
                 RaiseDispatchAction(new Action(() => Bots.Add(bot)));
             }
-            
+
             // Checking Process
             foreach (var data in DataPool.List.Skip(StartingPoint - 1))
             {
@@ -681,9 +691,9 @@ namespace RuriLib.Runner
 
             try
             {
-                GETPROXY:
+GETPROXY:
 
-                // Check if the job was cancelled or if the Master Worker is not running
+// Check if the job was cancelled or if the Master Worker is not running
                 if (senderABW.CancellationPending || ShouldStop())
                 {
                     RaiseMessageArrived(LogLevel.Info, $"[{bot.Id}] Cancellation pending, aborting", false);
@@ -691,7 +701,7 @@ namespace RuriLib.Runner
                 }
 
                 CProxy currentProxy = null;
-                
+
                 // If the config requires proxies or we enforced proxy use
                 if (UseProxies)
                 {
@@ -846,9 +856,9 @@ namespace RuriLib.Runner
                 }
                 while (loli.CanProceed); // Do this while the LoliScript has stuff to process
 
-                FINISH:
+FINISH:
 
-                // Print the end message
+// Print the end message
                 BotLog.Add(new LogEntry($"===== BOT TERMINATED WITH RESULT: {botData.StatusString} =====", Colors.White));
                 if (Settings.General.BotsDisplayMode != BotsDisplayMode.None)
                     bot.Status = $"<<< FINISHED WITH RESULT: {botData.StatusString} >>>";
@@ -886,7 +896,7 @@ namespace RuriLib.Runner
                 // Analyze the Result of the Check
                 ValidData validData = null;
                 string hitType = botData.Status.ToString();
-                
+
                 // Build the Captured Data
                 VariableList capturedData = new VariableList(botData.Variables.All.Where(v => v.IsCapture && !v.Hidden).ToList());
 
@@ -954,7 +964,7 @@ namespace RuriLib.Runner
                         goto GETPROXY;
 
                     case BotStatus.NONE:
-                        TOCHECK:
+TOCHECK:
                         validData = new ValidData(botData.Data.Data, botData.Proxy == null ? "" : botData.Proxy.Proxy, botData.Proxy == null ? ProxyType.Http : botData.Proxy.Type, botData.Status, "TOCHK", capturedData.ToCaptureString(), Settings.General.SaveLastSource ? botData.ResponseSource : "", BotLog);
                         RaiseDispatchAction(new Action(() => ToCheckList.Add(validData)));
 
@@ -1078,7 +1088,7 @@ namespace RuriLib.Runner
 
         /// <summary>Fired when the currently selected Config changed.</summary>
         public event Action<IRunnerMessaging> ConfigChanged;
-        
+
         /// <summary>Fired when the currently selected Wordlist changed.</summary>
         public event Action<IRunnerMessaging> WordlistChanged;
 
@@ -1272,10 +1282,10 @@ namespace RuriLib.Runner
 
         private bool ShouldTriggerEvasion(int retries)
         {
-            var evasionValue = Config.Settings.BanLoopEvasionOverride == -1 
-                ? Settings.Proxies.BanLoopEvasion 
+            var evasionValue = Config.Settings.BanLoopEvasionOverride == -1
+                ? Settings.Proxies.BanLoopEvasion
                 : Config.Settings.BanLoopEvasionOverride;
-            
+
             return retries < evasionValue || evasionValue == 0;
         }
         #endregion

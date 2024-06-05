@@ -1,7 +1,7 @@
-﻿using Extreme.Net;
-using RuriLib.Models;
-using System;
+﻿using System;
 using System.Windows.Media;
+using Extreme.Net;
+using RuriLib.Models;
 
 namespace RuriLib.LS
 {

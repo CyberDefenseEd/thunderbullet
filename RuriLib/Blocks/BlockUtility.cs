@@ -1,16 +1,14 @@
-﻿using RuriLib.Functions.Conditions;
-using RuriLib.Functions.Conversions;
-using RuriLib.Functions.Files;
-using RuriLib.LS;
-using RuriLib.Models;
-using RuriLib.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Numerics;
 using System.Windows.Media;
+using RuriLib.Functions.Conditions;
+using RuriLib.Functions.Conversions;
+using RuriLib.Functions.Files;
+using RuriLib.LS;
+using RuriLib.Models;
 
 namespace RuriLib
 {
@@ -374,7 +372,7 @@ namespace RuriLib
         public override string ToLS(bool indent = true)
         {
             var writer = new BlockWriter(GetType(), indent, Disabled);
-            writer                
+            writer
                 .Label(Label)
                 .Token("UTILITY")
                 .Token(Group);
@@ -523,7 +521,7 @@ namespace RuriLib
                                 else
                                 {
                                     sorted.Sort();
-                                }                                
+                                }
                                 if (!Ascending) sorted.Reverse();
                                 data.Variables.Set(new CVar(variableName, sorted, isCapture));
                                 break;
@@ -672,7 +670,6 @@ namespace RuriLib
                                 break;
 
                             case FileAction.Delete:
-                                // No deletion if the file is in use (DB/OpenBullet.db cannot be deleted but instead DB/OpenBullet-BackupCopy.db)
                                 // If another process is just reading the file it will be deleted
                                 lock (FileLocker.GetLock(file))
                                     File.Delete(file);
@@ -697,7 +694,6 @@ namespace RuriLib
 
                             case FolderAction.Delete:
                                 // All files in the folder will be deleted expect the ones that are in use
-                                // DB/OpenBullet.db cannot be deleted but instead DB/OpenBullet-BackupCopy.db
                                 // If another process is just reading a file in the folder it will be deleted
                                 Directory.Delete(folder, true);
                                 break;
@@ -709,7 +705,7 @@ namespace RuriLib
                         break;
                 }
             }
-            catch(Exception ex) { data.Log(new LogEntry(ex.Message, Colors.Tomato)); }
+            catch (Exception ex) { data.Log(new LogEntry(ex.Message, Colors.Tomato)); }
         }
     }
 }

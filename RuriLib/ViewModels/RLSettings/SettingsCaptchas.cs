@@ -1,6 +1,6 @@
-﻿using RuriLib.Enums;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
+using RuriLib.Enums;
 
 namespace RuriLib.ViewModels
 {
@@ -92,7 +92,7 @@ namespace RuriLib.ViewModels
         private bool bypassBalanceCheck = false;
         /// <summary>Whether to bypass the balance check before solving a captcha challenge.</summary>
         public bool BypassBalanceCheck { get { return bypassBalanceCheck; } set { bypassBalanceCheck = value; OnPropertyChanged(); } }
-        
+
         private int timeout = 120;
         /// <summary>The maximum amount of time to wait until a captcha challenge is solved.</summary>
         public int Timeout { get { return timeout; } set { timeout = value; OnPropertyChanged(); } }

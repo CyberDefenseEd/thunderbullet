@@ -1,16 +1,15 @@
-﻿using RuriLib.LS;
-using System;
-using System.Windows.Media;
-using System.Net;
-using CloudflareSolverRe;
-using CloudflareSolverRe.Types;
-using System.Net.Http;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using RuriLib.Functions.Requests;
+using System.Net;
+using System.Net.Http;
+using System.Windows.Media;
 using CaptchaSharp;
-using CaptchaSharp.Services;
+using CloudflareSolverRe;
+using CloudflareSolverRe.Types;
 using RuriLib.Functions.Captchas;
+using RuriLib.Functions.Requests;
+using RuriLib.LS;
 
 namespace RuriLib
 {
@@ -99,7 +98,7 @@ namespace RuriLib
                     .Token("SECPROTO")
                     .Token(SecurityProtocol);
             }
-                
+
             writer
                 .Boolean(PrintResponseInfo, nameof(PrintResponseInfo))
                 .Boolean(AutoRedirect, nameof(AutoRedirect));
@@ -185,7 +184,7 @@ namespace RuriLib
             {
                 // Join all the aggregate exception inner exception messages
                 var message = string.Join(Environment.NewLine, ex.InnerExceptions.Select(e => e.Message));
-                
+
                 if (data.ConfigSettings.IgnoreResponseErrors)
                 {
                     data.Log(new LogEntry(message, Colors.Tomato));

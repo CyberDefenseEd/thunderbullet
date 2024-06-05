@@ -1,8 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using RuriLib.Functions.Files;
-using RuriLib.LS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
@@ -10,6 +6,10 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Threading;
 using System.Windows.Media;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using RuriLib.Functions.Files;
+using RuriLib.LS;
 
 namespace RuriLib
 {
@@ -243,7 +243,7 @@ namespace RuriLib
             ReadOnlyCollection<IWebElement> elements = null;
             try
             {
-                if(action != ElementAction.WaitForElement)
+                if (action != ElementAction.WaitForElement)
                 {
                     elements = FindElements(data);
                     element = elements[elementIndex];
@@ -345,7 +345,7 @@ namespace RuriLib
                         var max = 10000;
                         try { max = int.Parse(input) * 1000; } catch { }// Max ms to wait
                         var found = false;
-                        while(ms < max)
+                        while (ms < max)
                         {
                             try
                             {
@@ -362,7 +362,8 @@ namespace RuriLib
                     case ElementAction.SendKeysHuman:
                         var toSend = ReplaceValues(input, data);
                         var rand = new Random();
-                        foreach(char c in toSend) {
+                        foreach (char c in toSend)
+                        {
                             element.SendKeys(c.ToString());
                             Thread.Sleep(rand.Next(100, 300));
                         }

@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using RuriLib.Functions.Captchas;
-using System;
+﻿using System;
 using System.Windows.Media;
+using Newtonsoft.Json;
+using RuriLib.Functions.Captchas;
 
 namespace RuriLib
 {

@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-
-namespace RuriLib.ViewModels
+﻿namespace RuriLib.ViewModels
 {
     /// <summary>
     /// A custom input that is required to the user before the Config is started.

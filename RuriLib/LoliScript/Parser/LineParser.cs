@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using System.Windows.Media;
 
 namespace RuriLib.LS
 {
@@ -83,7 +82,7 @@ namespace RuriLib.LS
             {
                 prop = instance.GetType().GetProperty(result[0]);
             }
-            catch 
+            catch
             {
                 return;
                 // throw new ArgumentException($"There is no property called {result[0]} in the type {instance.GetType().ToString()}");
@@ -133,7 +132,8 @@ namespace RuriLib.LS
         /// <returns>The literal without the leading and trailing double quotes</returns>
         public static string ParseLiteral(ref string input, string label, bool replace = false, BotData data = null)
         {
-            try {
+            try
+            {
                 if (replace) return BlockBase.ReplaceValues(ParseToken(ref input, TokenType.Literal, true), data);
                 else return ParseToken(ref input, TokenType.Literal, true);
             }
