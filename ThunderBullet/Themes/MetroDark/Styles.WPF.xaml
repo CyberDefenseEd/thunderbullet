@@ -6,6 +6,8 @@
     <ResourceDictionary Source="Styles.Shared.xaml" />
   </ResourceDictionary.MergedDictionaries>
 
+    
+    
   <!-- ******************************************************** WPF SPECIFIC INLINE-CONTROLS RESOURCES ***********************************************************
     ***********************************************************************************************************************************************************************    -->
   <!-- *********************************  ScrollBarButton Style  ********************************* -->
@@ -55,30 +57,30 @@
   </Style>
 
   <!-- *********************************  ScrollBarPageButton Style  ********************************* -->
-  <Style x:Key="ScrollBarPageButtonStyle" TargetType="{x:Type RepeatButton}">
-    <Setter Property="OverridesDefaultStyle" Value="true" />
-    <Setter Property="Background" Value="Transparent" />
-    <Setter Property="Focusable" Value="false" />
-    <Setter Property="IsTabStop" Value="false" />
-    <Setter Property="Template">
-      <Setter.Value>
-        <ControlTemplate TargetType="{x:Type RepeatButton}">
-          <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
-            <VisualStateManager.VisualStateGroups>
-              <VisualStateGroup x:Name="CommonStates">
-                <VisualState x:Name="Normal" />
-                <VisualState x:Name="MouseOver" />
-                <VisualState x:Name="Pressed" />
-                <VisualState x:Name="Disabled" />
-              </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-          </Rectangle>
-        </ControlTemplate>
-      </Setter.Value>
-    </Setter>
-  </Style>
+    <Style x:Key="ScrollBarPageButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed" />
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Rectangle>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
-  <!-- *********************************  Horizontal ScrollBarThumb Style  ********************************* -->
+    <!-- *********************************  Horizontal ScrollBarThumb Style  ********************************* -->
   <Style x:Key="HScrollBarThumbStyle" TargetType="{x:Type Thumb}">
     <Setter Property="MinWidth" Value="20" />
     <Setter Property="MinHeight" Value="30" />

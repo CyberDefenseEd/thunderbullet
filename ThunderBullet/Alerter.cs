@@ -7,7 +7,9 @@ namespace ThunderBullet
     {
         public bool YesOrNo(string message, string title)
         {
-            return MessageBox.Show(message, title, MessageBoxButton.YesNo) == MessageBoxResult.Yes;
+            var dialog = new Dialog(message, title);
+            dialog.ShowDialog();
+            return dialog.Result;
         }
     }
 }

@@ -403,14 +403,16 @@ namespace ThunderBullet
 
                 if (active == 0)
                 {
-                    if (MessageBox.Show($"Are you sure you want to quit?",
-                    "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                    var dialog = new Dialog("Are you sure you want to quit?", "Confirmation");
+                    dialog.ShowDialog();
+                    if (!dialog.Result)
                         return false;
                 }
                 else
                 {
-                    if (MessageBox.Show($"There are {active} active runners. Are you sure you want to quit?",
-                    "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                    var dialog = new Dialog($"There are {active} active runners. Are you sure you want to quit?", "Confirmation");
+                    dialog.ShowDialog();
+                    if (!dialog.Result)
                         return false;
                 }
             }
